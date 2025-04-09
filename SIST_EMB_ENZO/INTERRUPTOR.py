@@ -7,8 +7,9 @@ def sensor_de_presenca():
 def acender_lampada():
     estado_sensor = sensor_de_presenca()
     print("-------------------------")
+    print(" Lâmpada : 💡 (acesa)")
     if estado_sensor == "presença":
-        print(" Lâmpada : 💡 (acesa)")
+
     else:
         print(" Lâmpada : desligada")
     print(f" Sensor detectou: {estado_sensor}")
