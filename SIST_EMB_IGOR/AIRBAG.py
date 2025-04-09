@@ -4,24 +4,27 @@ import time
 def sensor_de_impacto():
     return random.choice(["nenhum impacto detectado", "air bag acionado!"])
 
-def acionar_airbag(velocidade_maxima):
-    
-    velocidade_atual = random.randint(0, velocidade_maxima)  
+def detectando_velocidade(velocidade_maxima):
+    return random.randint(0, velocidade_maxima)
 
-    print(f"Velocidade atual: {velocidade_atual} km/h")
-    
-    if velocidade_atual > 50:
+def gerenciar_airbag(velocidade_atual):
+    if velocidade_atual > 50: 
+        print("-------------------------")
         estado_sensor = sensor_de_impacto()
         if estado_sensor == "air bag acionado!":
             print("Air bag acionado")
-            print("-----------------------")
+        else:
+            print("Nenhum impacto detectado")
+        print("-----------------------")
     else:
         print(f"Velocidade baixa ({velocidade_atual} km/h) - Air bag não acionado.")
         print("-------------------------")
 
 def airbag():
     while True:
-        acionar_airbag(120) 
-        time.sleep(5)  
+        velocidade_atual = detectando_velocidade(120)
+        print(f"Velocidade atual: {velocidade_atual} km/h")
+        gerenciar_airbag(velocidade_atual)  
+        time.sleep(5) 
 
 airbag()
