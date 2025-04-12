@@ -12,7 +12,7 @@ def gerenciar_airbag(velocidade_atual):
         print("-------------------------")
         estado_sensor = sensor_de_impacto()
         if estado_sensor == "air bag acionado!":
-            print("Air bag acionado")
+            print("Impacto dectado! Air bag acionado")
         else:
             print("Nenhum impacto detectado")
         print("-----------------------")
